@@ -2,17 +2,22 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post'
 
-const MyPosts = () => {
-    return <div>
-    My posts
+const MyPosts = ({posts}) => {
+
+  let postElements = posts.map(p => <Post message={p.message} likes={p.likes}/>)
+
+    return <div className={s.postsBLock}>
+    <h2>My posts</h2>
     <div>
-      <textarea>text area</textarea>
-      <button>Add post</button>
-      <button>Remove post</button>
+      <div>
+        <textarea>text area</textarea>
+      </div>
+      <div>
+        <button>Add post</button>
+      </div>
     </div>
     <div className={s.posts}>
-      <Post message="Hi, how are you?" likes={2}/>
-      <Post message="My first post here." likes={7}/>
+      {postElements}
     </div>
   </div>
 }

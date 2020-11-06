@@ -1,5 +1,9 @@
+.descriptionBlock {
+    padding: 16px;
+}
+
 .backgroundPhoto {
-    max-width: 100%;
+    width: 100%;
 }
 
 .backgroundPhoto img {

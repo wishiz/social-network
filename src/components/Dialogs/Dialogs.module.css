@@ -1,0 +1,42 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    padding: 16px;
+}
+
+.dialogsItems {
+
+}
+
+.dialogsItems .active {
+    color: #fbf7f0;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+}
+
+.avatar img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.dialog {
+    
+}
+
+.messages div:nth-child(even) {
+    color: red;
+    margin-left: 300px;
+}
+
+.message {
+    border: 1px black solid;
+    border-radius: 4px;
+    width: 200px;
+    height: 32px;
+    padding: 4px;
+}

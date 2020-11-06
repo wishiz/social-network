@@ -1,0 +1,24 @@
+.title {
+    color: white;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.friendsBlock {
+    display: flex;
+}
+
+.friendsItem {
+    margin-right: 10px;
+}
+
+.circle {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: yellow;
+}
+
+.name {
+    color: white;
+}
