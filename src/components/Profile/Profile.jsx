@@ -1,15 +1,16 @@
 import React from 'react';
 
-import s from './Profile.module.css';
-
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Profile = ({state}) => {
+const Profile = ({profilePage, addPost, updateNewPostText}) => {
     return (
       <div>
         <ProfileInfo />
-        <MyPosts posts={state.posts}/>
+        <MyPosts posts={profilePage.posts} 
+        newPostText={profilePage.newPostText}
+        updateNewPostText={updateNewPostText}
+        addPost={addPost}/>
       </div>
   )
 }

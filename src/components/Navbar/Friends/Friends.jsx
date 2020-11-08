@@ -2,8 +2,6 @@ import React from 'react';
 import s from './Friends.module.css';
 
 const Friends = ({friends}) => {
-
-    console.log(friends)
     return (
     <div>
         <h3 className={s.title}>Friends</h3>
