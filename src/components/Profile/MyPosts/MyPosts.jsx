@@ -2,30 +2,31 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post'
 
-const MyPosts = ({posts, addPost, updateNewPostText, newPostText}) => {
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/reducers/profileReducer';
 
-  let postElements = posts.map(p => <Post message={p.message} likes={p.likes}/>)
+const MyPosts = ({ posts, dispatch, newPostText }) => {
 
-  let newPost = React.createRef()
+  let postElements = posts.map(p => <Post message={p.message} likes={p.likes} />)
 
-  let handleClick = () => {
-    addPost();
+  let addPost = () => {
+    dispatch(addPostActionCreator());
   }
 
-  let onPostChange = () => {
-    let text = newPost.current.value;
-    updateNewPostText(text);
-    newPost.current.value = '';
+  let onPostChange = (e) => {
+    let text = e.target.value;
+    dispatch(updateNewPostTextActionCreator(text));
   }
 
-    return <div className={s.postsBLock}>
+  return <div className={s.postsBlock}>
     <h2>My posts</h2>
     <div>
       <div>
-        <textarea ref={newPost} value={newPostText} onChange={onPostChange}>text area</textarea>
+        <textarea
+          value={newPostText}
+          onChange={onPostChange}>text area</textarea>
       </div>
       <div>
-        <button onClick={handleClick}>Add post</button>
+        <button onClick={addPost}>Add post</button>
       </div>
     </div>
     <div className={s.posts}>

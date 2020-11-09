@@ -10,22 +10,28 @@ import Settings from './components/Settings/Settings';
 
 import { Route } from 'react-router-dom';
 
-const App = ({state, addPost, updateNewPostText}) => {  
+const App = ({ store }) => {
   return (
-      <div className='app'>
-        <div className='app-wrapper'>
-          <Header />
-          <Navbar state={state.sidebar}/>
-          <div className='app-wrapper-content'>
-            <Route exact path='/dialogs' render={() => <Dialogs state={state.dialogsPage}/>} />
-            <Route path='/profile' render={() => <Profile profilePage={state.profilePage} addPost={addPost} updateNewPostText={updateNewPostText}/>}/>
-            <Route path='/news' component={News}/>
-            <Route path='/music' component={Music}/>
-            <Route path='/settings' component={Settings}/>
-          </div>
-          </div>
+    <div className='app'>
+      <div className='app-wrapper'>
+        <Header />
+        <Navbar state={store.getState().sidebar} />
+        <div className='app-wrapper-content'>
+          <Route path='/dialogs' render={() =>
+            <Dialogs 
+            dialogsPage={store.getState().dialogsPage}
+            dispatch={store.dispatch.bind(store)} />} />
+          <Route path='/profile' render={() =>
+            <Profile
+              profilePage={store.getState().profilePage}
+              dispatch={store.dispatch.bind(store)} />} />
+          <Route path='/news' component={News} />
+          <Route path='/music' component={Music} />
+          <Route path='/settings' component={Settings} />
+        </div>
       </div>
-    );
+    </div>
+  );
 }
 
 export default App;
