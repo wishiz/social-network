@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import Friends from './Friends/Friends';
 
 const Navbar = ({state}) => {
+    debugger;
     return <nav className={s.nav}>
         <div className={s.item}>
             <NavLink to="/profile" activeClassName={s.activeLink}>Profile</NavLink> 
