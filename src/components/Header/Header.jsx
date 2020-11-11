@@ -5,7 +5,7 @@ import headerIcon from '../../assets/icons/headerIcon.png'
 
 const Header = () => {
     return <header className={s.header}>
-        <img src={headerIcon} />
+        <img src={headerIcon} alt="logo" />
     </header>
 }
 

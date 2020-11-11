@@ -4,7 +4,10 @@ import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
-const Dialogs = ({ sendMessage, updateNewMessageText, newMessageText, dialogs, messages }) => {
+const Dialogs = ({ sendMessage, updateNewMessageText, dialogsPage }) => {
+    let dialogsElements = dialogsPage.dialogs.map((d) => <DialogItem name={d.name} key={d.id} id={d.id} img={d.img} />);
+    let messagesElements = dialogsPage.messages.map((m) => <Message message={m.message} key={m.id}/>);
+
     let onSendMessage = () => {
         sendMessage();
     }
@@ -12,23 +15,26 @@ const Dialogs = ({ sendMessage, updateNewMessageText, newMessageText, dialogs, m
     let onUpdateNewMessageText = (e) => {
         let text = e.target.value;
         updateNewMessageText(text);
+        console.log('Text: ', text);
     }
+
 
     return (
         <>
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    {dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id} img={dialog.img} />)}
+                    {dialogsElements}
                 </div>
 
                 <div>
                     <div className={s.messages}>
-                        {messages.map((message) => <Message message={message.message} />)}
+                        {messagesElements}
                     </div>
                     <textarea
-                        value={newMessageText}
+                        value={dialogsPage.newMessageText}
                         className={s.newMessageField}
-                        onChange={onUpdateNewMessageText}></textarea>
+                        onChange={onUpdateNewMessageText}>
+                    </textarea>
                     <button onClick={onSendMessage}>Send</button>
                 </div>
             </div>

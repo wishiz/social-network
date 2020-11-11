@@ -2,9 +2,9 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post'
 
-const MyPosts = ({ addPost, updateNewPostText, posts, newPostText }) => {
+const MyPosts = ({ addPost, updateNewPostText, profilePage }) => {
 
-  let postElements = posts.map(p => <Post message={p.message} likes={p.likes} />)
+  let postElements = profilePage.posts.map(p => <Post message={p.message} likes={p.likes} key={p.id} />)
 
   let onAddPost = () => {
     addPost();
@@ -20,7 +20,7 @@ const MyPosts = ({ addPost, updateNewPostText, posts, newPostText }) => {
     <div>
       <div>
         <textarea
-          value={newPostText}
+          value={profilePage.newPostText}
           onChange={onPostChange}>text area</textarea>
       </div>
       <div>
