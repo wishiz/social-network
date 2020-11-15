@@ -19,7 +19,6 @@ let initialState = {
 };
 
 const dialogsReducer = (state = initialState, action) => {
-    console.log(action.text);
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_TEXT:
             return {

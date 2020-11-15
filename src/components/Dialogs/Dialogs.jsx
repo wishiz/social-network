@@ -15,7 +15,6 @@ const Dialogs = ({ sendMessage, updateNewMessageText, dialogsPage }) => {
     let onUpdateNewMessageText = (e) => {
         let text = e.target.value;
         updateNewMessageText(text);
-        console.log('Text: ', text);
     }
 
 
