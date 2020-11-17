@@ -25,3 +25,14 @@
     justify-content: space-between;
     width: 100%;
 }
+
+.pageNumber {
+    margin-right: 4px;
+    cursor: pointer;
+    transition: 0.1s ease color, 0.3s ease font-weight;
+}
+
+.activePageNumber {
+    color: #ee6f57;
+    font-weight: 700;
+}
