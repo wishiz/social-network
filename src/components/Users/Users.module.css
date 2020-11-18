@@ -1,38 +1,38 @@
 .avatar {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 8px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 8px;
 }
 
 .avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .userBlock {
-    display: flex;
-    padding: 16px;
+  display: flex;
+  padding: 16px;
 }
 
 .leftBlock {
-    margin-right: 24px;
+  margin-right: 24px;
 }
 
 .rightBlock {
-    padding-top: 8px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .pageNumber {
-    margin-right: 4px;
-    cursor: pointer;
-    transition: 0.1s ease color, 0.3s ease font-weight;
+  margin-right: 4px;
+  cursor: pointer;
+  transition: 0.1s ease color, 0.3s ease font-weight;
 }
 
 .activePageNumber {
-    color: #ee6f57;
-    font-weight: 700;
+  color: #ee6f57;
+  font-weight: 700;
 }

@@ -1,24 +1,30 @@
 .title {
-    color: white;
-    font-weight: 400;
-    font-size: 25px;
+  color: white;
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 16px;
 }
 
 .friendsBlock {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
 }
 
 .friendsItem {
-    margin-right: 10px;
+  margin-right: 10px;
+}
+
+.friendsItem:last-child {
+  margin-right: 0;
 }
 
 .circle {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    background-color: yellow;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: yellow;
 }
 
 .name {
-    color: white;
+  color: white;
 }

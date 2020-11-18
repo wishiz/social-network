@@ -3,13 +3,13 @@ import React from 'react';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Profile = ({ store }) => {
+const Profile = ({ profilePage }) => {
   return (
     <div>
-      <ProfileInfo />
-      <MyPostsContainer store={store} />
+      <ProfileInfo profilePage={profilePage} />
+      <MyPostsContainer />
     </div>
-  )
-}
+  );
+};
 
 export default Profile;

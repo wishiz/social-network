@@ -1,10 +1,18 @@
 .header {
-    grid-area: h;
-    background-color: #fbf7f0;
-    padding: 0 8px;
+  grid-area: h;
+  background-color: #fbf7f0;
+  padding: 0 8px;
 }
 
-.header img {
-    width: 60px;
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
+.headerLogo {
+  width: 60px;
+}
+
+.headerLogo img {
+  width: 100%;
+}

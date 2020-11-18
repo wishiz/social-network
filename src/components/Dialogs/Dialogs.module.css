@@ -1,58 +1,56 @@
 .dialogs {
-    display: grid;
-    grid-template-columns: 3fr 10fr;
-    padding: 16px;
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+  padding: 16px;
 }
 
 .dialogsItems {
-
 }
 
 .dialogsItems .active {
-    color: #fbf7f0;
+  color: #fbf7f0;
 }
 
 .avatar {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 
 .avatar img {
-    object-fit: cover;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 .dialog {
-    
 }
 
 .messages div:nth-child(even) {
-    background-color: #bbbfca;
-    margin-left: 300px;
+  background-color: #bbbfca;
+  margin-left: 300px;
 }
 
 .messages div:nth-child(odd) {
-    background-color: #d9e4dd;
+  background-color: #d9e4dd;
 }
 
 .messages {
-    margin-bottom: 48px;
+  margin-bottom: 48px;
 }
 
 .message {
-    border: 1px #92817a solid;
-    border-radius: 4px;
-    width: 200px;
-    height: 32px;
-    padding: 4px;
+  border: 1px #92817a solid;
+  border-radius: 4px;
+  width: 200px;
+  height: 32px;
+  padding: 4px;
 }
 
 .newMessageField {
-    width: 100%;
-    height: 32px;
-    padding: 4px;    
-    border: 1px #92817a solid;
-    border-radius: 4px;
+  width: 100%;
+  height: 32px;
+  padding: 4px;
+  border: 1px #92817a solid;
+  border-radius: 4px;
 }

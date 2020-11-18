@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import NavbarContainer from './components/Navbar/NavbarContainer';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -13,17 +13,16 @@ import { Route } from 'react-router-dom';
 
 import './App.css';
 
+
 const App = ({ store }) => {
   return (
     <div className='app'>
       <div className='app-wrapper'>
-        <Header />
+        <HeaderContainer />
         <NavbarContainer />
         <div className='app-wrapper-content'>
-          <Route path='/dialogs' render={() =>
-            <DialogsContainer />} />
-          <Route path='/profile' render={() =>
-            <Profile />} />
+          <Route path='/dialogs' render={() => <DialogsContainer />} />
+          <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />
@@ -32,6 +31,6 @@ const App = ({ store }) => {
       </div>
     </div>
   );
-}
+};
 
 export default App;

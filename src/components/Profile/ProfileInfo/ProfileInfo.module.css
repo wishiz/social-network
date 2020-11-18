@@ -1,11 +1,16 @@
 .descriptionBlock {
-    padding: 16px;
+  padding: 16px;
 }
 
 .backgroundPhoto {
-    width: 100%;
+  width: 100%;
 }
 
 .backgroundPhoto img {
-    width: 100%;
+  width: 100%;
+}
+
+.profileInfoTitle {
+  font-weight: 700;
+  color: #ee6f57;
 }

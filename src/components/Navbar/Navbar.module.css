@@ -1,15 +1,23 @@
 .nav {
-    grid-area: n;
-    background-color: #ee6f57;
-    padding: 20px;
-    width: 160px;
+  grid-area: n;
+  background-color: #ee6f57;
+  padding: 20px;
+  width: 210px;
+}
+
+.links {
+  margin-bottom: 32px;
+}
+
+.item {
+  margin-bottom: 4px;
 }
 
 .item a {
-    color: #213e3b;
-    text-decoration: none;
+  color: #213e3b;
+  text-decoration: none;
 }
 
 .item a.activeLink {
-    color: #fbf7f0;;
+  color: #fbf7f0;
 }
