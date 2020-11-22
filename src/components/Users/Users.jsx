@@ -3,7 +3,7 @@ import s from './Users.module.css';
 import defaultPhoto from '../../assets/images/images.png';
 import { NavLink } from 'react-router-dom';
 import { nanoid } from 'nanoid';
-import axios from 'axios';
+import userApi from '../../api/api';
 
 const Users = ({
   users,
@@ -13,6 +13,8 @@ const Users = ({
   unfollow,
   follow,
   onChangePage,
+  followingInProgress,
+  toggleFollowingProgress,
 }) => {
   const usersPageCount = Math.ceil(totalUsersCount / pageSize);
 
@@ -54,45 +56,30 @@ const Users = ({
             <div>
               {u.followed ? (
                 <button
+                  disabled={followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    axios
-                      .delete(
-                        `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                        {
-                          withCredentials: true,
-                          headers: {
-                            'API-KEY': 'afe99689-6834-4c64-afcb-5e7cd48fcea5',
-                          },
-                        }
-                      )
-                      .then(response => {
-                        if (response.data.resultCode === 0) {
-                          unfollow(u.id);
-                        }
-                      });
+                    toggleFollowingProgress(true, u.id);
+                    userApi.unFollow(u.id).then(response => {
+                      if (response.resultCode === 0) {
+                        unfollow(u.id);
+                      }
+                      toggleFollowingProgress(false, u.id);
+                    });
                   }}
                 >
                   Unfollow
                 </button>
               ) : (
                 <button
+                  disabled={followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    axios
-                      .post(
-                        `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                        {},
-                        {
-                          withCredentials: true,
-                          headers: {
-                            'API-KEY': 'afe99689-6834-4c64-afcb-5e7cd48fcea5',
-                          },
-                        }
-                      )
-                      .then(response => {
-                        if (response.data.resultCode === 0) {
-                          follow(u.id);
-                        }
-                      });
+                    toggleFollowingProgress(true, u.id);
+                    userApi.follow(u.id).then(response => {
+                      if (response.resultCode === 0) {
+                        follow(u.id);
+                      }
+                      toggleFollowingProgress(false, u.id);
+                    });
                   }}
                 >
                   Follow
