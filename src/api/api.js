@@ -17,12 +17,15 @@ const userApi = {
   getProfile(userId) {
     return instance.get(`profile/${userId}`).then(response => response.data);
   },
-  unFollow(userId) {
+  unfollow(userId) {
     return instance.delete(`follow/${userId}`).then(response => response.data);
   },
   follow(userId) {
     return instance.post(`follow/${userId}`).then(response => response.data);
   },
+  setAuthData() {
+    return instance.get(`auth/me`).then(response => response.data)
+  }
 };
 
 export default userApi;

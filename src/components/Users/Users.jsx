@@ -1,20 +1,19 @@
 import React from 'react';
-import s from './Users.module.css';
-import defaultPhoto from '../../assets/images/images.png';
 import { NavLink } from 'react-router-dom';
 import { nanoid } from 'nanoid';
-import userApi from '../../api/api';
+import s from './Users.module.css';
+
+import defaultPhoto from '../../assets/images/images.png';
 
 const Users = ({
   users,
-  totalUsersCount,
   pageSize,
+  totalUsersCount,
   currentPage,
   unfollow,
   follow,
   onChangePage,
   followingInProgress,
-  toggleFollowingProgress,
 }) => {
   const usersPageCount = Math.ceil(totalUsersCount / pageSize);
 
@@ -58,13 +57,7 @@ const Users = ({
                 <button
                   disabled={followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    toggleFollowingProgress(true, u.id);
-                    userApi.unFollow(u.id).then(response => {
-                      if (response.resultCode === 0) {
-                        unfollow(u.id);
-                      }
-                      toggleFollowingProgress(false, u.id);
-                    });
+                    unfollow(u.id)
                   }}
                 >
                   Unfollow
@@ -73,13 +66,7 @@ const Users = ({
                 <button
                   disabled={followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    toggleFollowingProgress(true, u.id);
-                    userApi.follow(u.id).then(response => {
-                      if (response.resultCode === 0) {
-                        follow(u.id);
-                      }
-                      toggleFollowingProgress(false, u.id);
-                    });
+                    follow(u.id)
                   }}
                 >
                   Follow
