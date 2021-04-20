@@ -1,7 +1,9 @@
 import React from 'react';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
+
+import user_avatar from '../../../assets/images/user_avatar.png';
 
 const ProfileInfo = ({ profilePage }) => {
   if (!profilePage) {
@@ -17,7 +19,11 @@ const ProfileInfo = ({ profilePage }) => {
         </div>
         <div className={s.descriptionBlock}>
           <div>
-            <img src={profilePage.photos.small} alt='user_ava' />
+            <img
+              src={profilePage.photos.small || user_avatar}
+              alt='user_ava'
+              className={s.userAvatar}
+            />
           </div>
           <p>
             <span className={s.profileInfoTitle}>Status:</span>{' '}
@@ -35,9 +41,7 @@ const ProfileInfo = ({ profilePage }) => {
             .filter(contact => profilePage.contacts[contact])
             .map(contact => (
               <p key={nanoid()}>
-                <span className={s.profileInfoTitle}>
-                  {contact}:
-                </span>{' '}
+                <span className={s.profileInfoTitle}>{contact}:</span>{' '}
                 {profilePage.contacts[contact]}
               </p>
             ))}

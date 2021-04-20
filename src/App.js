@@ -13,7 +13,6 @@ import { Route } from 'react-router-dom';
 
 import './App.css';
 
-
 const App = ({ store }) => {
   return (
     <div className='app'>

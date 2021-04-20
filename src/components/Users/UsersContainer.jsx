@@ -4,18 +4,18 @@ import {
   follow,
   unfollow,
   getUsers,
-  onChangePage
+  onChangePage,
 } from '../../redux/reducers/usersReducer';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.getUsers(this.props.currentPage, this.props.pageSize)
+    this.props.getUsers(this.props.currentPage, this.props.pageSize);
   }
 
   onChangePage = pageNumber => {
-    this.props.onChangePage(pageNumber, this.props.pageSize)
+    this.props.onChangePage(pageNumber, this.props.pageSize);
   };
 
   render() {
@@ -48,4 +48,9 @@ let mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { follow, unfollow, getUsers, onChangePage })(UsersContainer);
+export default connect(mapStateToProps, {
+  follow,
+  unfollow,
+  getUsers,
+  onChangePage,
+})(UsersContainer);

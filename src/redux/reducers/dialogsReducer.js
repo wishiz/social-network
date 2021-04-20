@@ -19,7 +19,8 @@ let initialState = {
     {
       id: 2,
       name: 'Vasya',
-      img: 'https://i1.sndcdn.com/artworks-ipQ4yMSsnoiJy7gw-F4yzgw-t3000x3000.jpg',
+      img:
+        'https://i1.sndcdn.com/artworks-ipQ4yMSsnoiJy7gw-F4yzgw-t3000x3000.jpg',
     },
     {
       id: 3,

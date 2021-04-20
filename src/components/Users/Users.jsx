@@ -57,7 +57,7 @@ const Users = ({
                 <button
                   disabled={followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    unfollow(u.id)
+                    unfollow(u.id);
                   }}
                 >
                   Unfollow
@@ -66,7 +66,7 @@ const Users = ({
                 <button
                   disabled={followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    follow(u.id)
+                    follow(u.id);
                   }}
                 >
                   Follow
