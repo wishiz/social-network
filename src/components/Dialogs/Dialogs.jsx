@@ -3,8 +3,14 @@ import s from './Dialogs.module.css';
 
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { Redirect } from 'react-router-dom';
 
-const Dialogs = ({ sendMessage, updateNewMessageText, dialogsPage }) => {
+const Dialogs = ({
+  sendMessage,
+  updateNewMessageText,
+  dialogsPage,
+  isAuth,
+}) => {
   let dialogsElements = dialogsPage.dialogs.map(d => (
     <DialogItem name={d.name} key={d.id} id={d.id} img={d.img} />
   ));
@@ -20,6 +26,8 @@ const Dialogs = ({ sendMessage, updateNewMessageText, dialogsPage }) => {
     let text = e.target.value;
     updateNewMessageText(text);
   };
+
+  if (!isAuth) return <Redirect to='/login' />;
 
   return (
     <>

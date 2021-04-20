@@ -12,6 +12,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import { Route } from 'react-router-dom';
 
 import './App.css';
+import Login from './components/Login/Login';
 
 const App = ({ store }) => {
   return (
@@ -26,6 +27,7 @@ const App = ({ store }) => {
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />
           <Route path='/users' render={() => <UsersContainer />} />
+          <Route path='/login' render={() => <Login />} />
         </div>
       </div>
     </div>
