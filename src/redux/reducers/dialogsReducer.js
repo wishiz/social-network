@@ -26,13 +26,13 @@ let initialState = {
       id: 3,
       name: 'Masha',
       img:
-        'https://media-exp1.licdn.com/dms/image/C4E03AQGSzOjOedm3uA/profile-displayphoto-shrink_800_800/0?e=1609977600&v=beta&t=k2wdK-ltX9NCfw3dppuWXpkDv7dyYWrpw5NZtyK6TZw',
+        'https://media-exp1.licdn.com/dms/image/C4E03AQGSzOjOedm3uA/profile-displayphoto-shrink_200_200/0/1533187933250?e=1622678400&v=beta&t=n624_H7OxBiHVcc31KPA1opyiMdMvIoOUfbqgqYX9rY',
     },
     {
       id: 4,
-      name: 'Lida',
+      name: 'Anya',
       img:
-        'https://media-exp1.licdn.com/dms/image/C5603AQFx7qq1v6TaHw/profile-displayphoto-shrink_200_200/0?e=1609977600&v=beta&t=TLvHi-R1LXz3c2jS7vvhgln0ST25BzCutQ93yDSZR9s',
+        'https://www.deadline.ru/data/cache/2020oct/14/16/1628471_34515-650x0.jpg',
     },
   ],
   newMessageText: '',
@@ -59,7 +59,7 @@ const dialogsReducer = (state = initialState, action) => {
 
 export const sendMessageActionCreator = () => ({ type: SEND_MESSAGE });
 
-export const updateNewMessageTextActionCreator = newText => ({
+export const updateNewMessageTextActionCreator = (newText) => ({
   type: UPDATE_NEW_MESSAGE_TEXT,
   newText: newText,
 });
