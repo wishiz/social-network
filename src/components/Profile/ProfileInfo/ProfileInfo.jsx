@@ -1,6 +1,9 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+
+import ProfileStatus from './ProfileStatus';
 import Preloader from '../../common/Preloader/Preloader';
+
 import s from './ProfileInfo.module.css';
 
 import user_avatar from '../../../assets/images/user_avatar.png';
@@ -25,10 +28,7 @@ const ProfileInfo = ({ profilePage }) => {
               className={s.userAvatar}
             />
           </div>
-          <p>
-            <span className={s.profileInfoTitle}>Status:</span>{' '}
-            {profilePage.aboutMe}
-          </p>
+          <ProfileStatus status='If you wanna ride, go ride the white horse' />
           <p>
             <span className={s.profileInfoTitle}>Full name:</span>{' '}
             {profilePage.fullName}
@@ -38,8 +38,8 @@ const ProfileInfo = ({ profilePage }) => {
             <span className={s.profileInfoTitle}>Contact me:</span>
           </div>
           {Object.keys(profilePage.contacts)
-            .filter(contact => profilePage.contacts[contact])
-            .map(contact => (
+            .filter((contact) => profilePage.contacts[contact])
+            .map((contact) => (
               <p key={nanoid()}>
                 <span className={s.profileInfoTitle}>{contact}:</span>{' '}
                 {profilePage.contacts[contact]}
