@@ -1,43 +1,51 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
+
 import {
   follow,
   unfollow,
   getUsers,
   onChangePage,
 } from '../../redux/reducers/usersReducer';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
+
+//-------------------
 
 class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.getUsers(this.props.currentPage, this.props.pageSize);
   }
 
-  onChangePage = pageNumber => {
+  onChangePage = (pageNumber) => {
     this.props.onChangePage(pageNumber, this.props.pageSize);
   };
 
   render() {
     return (
       <>
-        {this.props.isFetching ? <Preloader /> : null}
-        <Users
-          users={this.props.users}
-          pageSize={this.props.pageSize}
-          totalUsersCount={this.props.totalUsersCount}
-          currentPage={this.props.currentPage}
-          unfollow={this.props.unfollow}
-          follow={this.props.follow}
-          onChangePage={this.onChangePage}
-          followingInProgress={this.props.followingInProgress}
-        />
+        {this.props.isFetching ? (
+          <Preloader />
+        ) : (
+          <Users
+            users={this.props.users}
+            pageSize={this.props.pageSize}
+            totalUsersCount={this.props.totalUsersCount}
+            currentPage={this.props.currentPage}
+            unfollow={this.props.unfollow}
+            follow={this.props.follow}
+            onChangePage={this.onChangePage}
+            followingInProgress={this.props.followingInProgress}
+          />
+        )}
       </>
     );
   }
 }
 
-let mapStateToProps = state => {
+let mapStateToProps = (state) => {
   return {
     users: state.usersPage.users,
     pageSize: state.usersPage.pageSize,
@@ -48,9 +56,7 @@ let mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {
-  follow,
-  unfollow,
-  getUsers,
-  onChangePage,
-})(UsersContainer);
+export default compose(
+  withAuthRedirect,
+  connect(mapStateToProps, { follow, unfollow, getUsers, onChangePage })
+)(UsersContainer);
