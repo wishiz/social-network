@@ -8,7 +8,7 @@ import s from './ProfileInfo.module.css';
 
 import user_avatar from '../../../assets/images/user_avatar.png';
 
-const ProfileInfo = ({ profilePage }) => {
+const ProfileInfo = ({ profilePage, status, updateUserStatus }) => {
   if (!profilePage) {
     return <Preloader />;
   } else
@@ -28,7 +28,7 @@ const ProfileInfo = ({ profilePage }) => {
               className={s.userAvatar}
             />
           </div>
-          <ProfileStatus status='If you wanna ride, go ride the white horse' />
+          <ProfileStatus status={status} updateUserStatus={updateUserStatus} />
           <p>
             <span className={s.profileInfoTitle}>Full name:</span>{' '}
             {profilePage.fullName}
