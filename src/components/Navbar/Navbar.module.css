@@ -1,8 +1,8 @@
 .nav {
   grid-area: n;
-  background-color: #ee6f57;
-  padding: 20px;
+  background-color: #57837B;
   width: 210px;
+  font-size: 16px
 }
 
 .links {
@@ -10,11 +10,13 @@
 }
 
 .item {
-  margin-bottom: 4px;
+  padding: 15px 16px;
+  background-color: rgb(87, 131, 123, 0.5);
+  border-bottom: #515E63 1px solid;
 }
 
 .item a {
-  color: #213e3b;
+  color: white;
   text-decoration: none;
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Friends.module.css';
 
 const Friends = ({ friends }) => {
-  let friendsElements = friends.map(f => (
+  let friendsElements = friends.map((f) => (
     <div className={s.friendsItem} key={f.id}>
       <div className={s.circle}></div>
       <p className={s.name}>{f.name}</p>
@@ -10,7 +10,7 @@ const Friends = ({ friends }) => {
   ));
 
   return (
-    <div>
+    <div className={s.friendsContainer}>
       <h3 className={s.title}>Friends</h3>
       <div className={s.friendsBlock}>{friendsElements}</div>
     </div>

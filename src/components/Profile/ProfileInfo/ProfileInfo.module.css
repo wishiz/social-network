@@ -12,14 +12,19 @@
 
 .profileInfoTitle {
   font-weight: 700;
-  color: #ee6f57;
+  color: #fff;
 }
 
 .userAvatar {
   width: 60px;
   height: 60px;
+  margin-bottom: 8px;
 }
 
 .statusInput {
   width: 100%;
+}
+
+.profileStatus{
+  margin-bottom: 8px;
 }

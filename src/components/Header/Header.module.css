@@ -1,12 +1,14 @@
 .header {
+  padding: 20px;
   grid-area: h;
-  background-color: #fbf7f0;
+  background-color: #F1ECC3;
   padding: 0 8px;
 }
 
 .headerContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .headerLogo {

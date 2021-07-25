@@ -1,14 +1,16 @@
 .app {
-  background-color: #d9e4dd;
+  background-color: #C9D8B6;
   min-height: 100vh;
+  font-family: 'Merriweather', sans-serif;
 }
 
 .app-wrapper {
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.16);
   min-height: 100vh;
   margin: 0 auto;
   display: grid;
-  width: 880px;
+  max-width: 1160px;
+  padding-left: 40px;
+  padding-right: 40px;  
   grid-template-areas:
     'h h'
     'n c';
@@ -19,6 +21,8 @@
 }
 
 .app-wrapper-content {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.16);
   grid-area: c;
-  background-color: #cdc9c3;
+  background-color: #515E63;
+  padding: 40px;
 }

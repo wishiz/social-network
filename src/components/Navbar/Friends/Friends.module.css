@@ -1,3 +1,7 @@
+.friendsContainer {
+  padding: 20px;
+}
+
 .title {
   color: white;
   font-weight: 400;
@@ -23,6 +27,7 @@
   width: 45px;
   border-radius: 50%;
   background-color: yellow;
+  margin-bottom: 8px;
 }
 
 .name {
